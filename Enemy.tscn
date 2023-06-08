@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://gu3gb17x4dnr"]
+
+[ext_resource type="Script" path="res://Enemy.cs" id="1_t5tht"]
+[ext_resource type="Texture2D" uid="uid://nuyqj03q23ga" path="res://assets/triangle.png" id="2_dp8xa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mewvf"]
+size = Vector2(92.1009, 110.717)
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_t5tht")
+
+[node name="Triangle" type="Sprite2D" parent="."]
+modulate = Color(0.894118, 0.168627, 0, 1)
+rotation = 1.5708
+texture = ExtResource("2_dp8xa")
+region_rect = Rect2(30, 48, 40, 40)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.833336, -0.833332)
+scale = Vector2(1.06767, 0.858044)
+shape = SubResource("RectangleShape2D_mewvf")
+
+[node name="ProjectileSpawnPoint" type="Node2D" parent="."]
+position = Vector2(53.3333, 0)

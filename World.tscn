@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://4xcmtqsg5dux"]
+
+[ext_resource type="Script" path="res://GameManager.cs" id="1_r84qm"]
+[ext_resource type="PackedScene" uid="uid://mycshl7ohm0d" path="res://Player.tscn" id="1_xms21"]
+
+[sub_resource type="Environment" id="Environment_lthmc"]
+background_mode = 1
+background_energy_multiplier = 0.0
+ambient_light_energy = 0.0
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_r84qm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lthmc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(640, 360)
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_xms21")]
+position = Vector2(582, 364)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 35.0
+offset_top = 39.0
+offset_right = 216.0
+offset_bottom = 159.0
+text = "DEBUG LABEL FOR TRACKING DIFFICULTY"
